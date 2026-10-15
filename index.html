@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Readify — Read. Discuss. Earn.</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="Readify home"><span class="brand-mark">R</span><span>Readify</span></a>
+  <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+  <nav id="nav" class="nav" aria-label="Main navigation">
+    <a href="#home" data-page="home">Home</a>
+    <a href="#founder" data-page="founder">About Founder</a>
+    <a href="#shop" data-page="shop">Shop</a>
+    <a href="#points" data-page="points">Points System</a>
+    <a href="#profile" data-page="profile">My Profile</a>
+  </nav>
+  <button class="age-pill" id="ageButton">Age: <strong id="ageLabel">12+</strong> ▾</button>
+</header>
+
+<main>
+<section class="page active" id="home" data-title="Home">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+      <h1>Read more.<br><em>Discover more.</em></h1>
+      <p>Readify makes reading feel like a friendly adventure. Find stories for your age, share thoughts with fellow readers, and earn rewards along the way.</p>
+      <div class="hero-actions"><a class="btn primary" href="#library">Explore books <span>→</span></a><button class="btn soft" id="dailyPick">Surprise me ✦</button></div>
+      <div class="mini-stats"><span><b id="bookCount">12</b> books for you</span><span><b>+25</b> pts per finish</span><span><b>100%</b> yours to explore</span></div>
+    </div>
+    <div class="hero-art" aria-label="Illustration placeholder">
+      <div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div>
+      <div class="book-stack"><div class="book b1">A</div><div class="book b2">R</div><div class="book b3">✦</div></div>
+      <div class="reading-card"><span>Currently reading</span><strong>The Little Lantern</strong><small>Chapter 4 · 62%</small><div class="progress"><i style="width:62%"></i></div></div>
+    </div>
+  </div>
+
+  <div class="section-head" id="library"><div><span class="eyebrow">PERSONALISED LIBRARY</span><h2>Stories picked for you</h2></div><span class="muted" id="filterStatus">Age 12+ · All genres</span></div>
+  <div class="filterbar">
+    <div class="genre-filters" id="genreFilters">
+      <button class="chip active" data-genre="All">All</button><button class="chip" data-genre="Fantasy">Fantasy</button><button class="chip" data-genre="Mystery">Mystery</button><button class="chip" data-genre="Adventure">Adventure</button><button class="chip" data-genre="Friendship">Friendship</button><button class="chip" data-genre="Non-fiction">Non-fiction</button>
+    </div>
+    <label class="search"><span>⌕</span><input id="bookSearch" placeholder="Search a story..." aria-label="Search books"></label>
+  </div>
+  <div class="book-grid" id="bookGrid"></div>
+
+  <div class="discussion-panel">
+    <div><span class="eyebrow">THE READING ROOM</span><h2>Talk about what you read</h2><p>Friendly, spoiler-aware discussions made for curious readers.</p></div>
+    <div class="discussion-list" id="discussionList">
+      <article><span class="avatar a1">M</span><div><b>Maya</b><p>What do you think the lantern symbol means in chapter 4?</p><small>12 replies · 8 min ago</small></div><button class="reply-btn">Join</button></article>
+      <article><span class="avatar a2">J</span><div><b>Jayden</b><p>Just finished <i>River of Stars</i> — that ending! ⭐</p><small>24 replies · 31 min ago</small></div><button class="reply-btn">Join</button></article>
+    </div>
+    <button class="btn outline" id="newDiscussion">＋ Start a discussion</button>
+  </div>
+</section>
+
+<section class="page" id="founder" data-title="About Founder">
+  <div class="simple-hero founder-hero"><div><span class="eyebrow">THE STORY BEHIND READIFY</span><h1>Built by a reader,<br><em>for every reader.</em></h1><p>Readify began with a simple idea: reading should feel welcoming, social and rewarding — no matter your age or where you are.</p></div><div class="founder-orbit"><div class="portrait"> <img src="/download.webp" alt="Readify founder">
+
+  </div><span>Founder</span><b>AR</b></div></div>
+  <div class="values"><article><span>01</span><h3>Make reading easy</h3><p>Clear navigation, comfortable type and age-friendly recommendations help everyone find their next book.</p></article><article><span>02</span><h3>Keep communities kind</h3><p>Thoughtful discussion tools encourage readers to exchange ideas while keeping spaces welcoming.</p></article><article><span>03</span><h3>Reward curiosity</h3><p>Points celebrate reading progress and can be exchanged for real-world bookish rewards.</p></article></div>
+  <div class="quote-card">“A good story gives you a place to go. A great reading community gives you people to come back to.”<small>— The Readify founding note</small></div>
+</section>
+
+<section class="page" id="shop" data-title="Shop">
+  <div class="section-head shop-head"><div><span class="eyebrow">REDEEM YOUR POINTS</span><h1>Bookish little rewards</h1><p>Use your points for physical books, bookmarks and Readify tokens.</p></div><div class="balance"><span>Your balance</span><b id="shopPoints">125</b><small>points</small></div></div>
+  <div class="shop-grid" id="shopGrid"></div>
+</section>
+
+<section class="page" id="points" data-title="Points System">
+  <div class="simple-hero points-hero"><div><span class="eyebrow">READ. FINISH. EARN.</span><h1>Your reading<br><em>has value.</em></h1><p>Every completed story adds points. Keep a steady reading habit and unlock more rewards.</p></div><div class="points-ring"><strong id="pointsTotal">125</strong><span>points</span></div></div>
+  <div class="earn-grid"><article><b>+25</b><h3>Finish a book</h3><p>Complete a story and mark it finished.</p></article><article><b>+10</b><h3>Join a discussion</h3><p>Share a thoughtful comment with the community.</p></article><article><b>+5</b><h3>Daily reading</h3><p>Check in after reading for at least 10 minutes.</p></article><article><b>+50</b><h3>Monthly streak</h3><p>Keep your reading habit going all month.</p></article></div>
+  <div class="level-card"><div><span class="eyebrow">YOUR LEVEL</span><h2>Curious Reader</h2><p>75 points until <b>Story Explorer</b></p></div><div class="level-progress"><div><i style="width:62%"></i></div><small>125 / 200</small></div></div>
+</section>
+
+<section class="page" id="profile" data-title="My Profile">
+  <div class="profile-top"><div class="profile-avatar">R</div><div><span class="eyebrow">YOUR READING SPACE</span><h1>Hi, Reader!</h1><p>Keep exploring. Your next favourite story is waiting.</p></div><button class="btn soft" id="editProfile">Edit profile</button></div>
+  <div class="profile-grid"><article class="profile-card"><span class="eyebrow">READING AGE</span><h2 id="profileAge">12+</h2><p>We'll use this to keep your recommendations age-appropriate.</p><button class="text-btn" id="changeAge">Change age →</button></article><article class="profile-card"><span class="eyebrow">BOOKS FINISHED</span><h2 id="finishedCount">3</h2><p>Every finish earns +25 points.</p><div class="tiny-bars"><i></i><i></i><i></i><i></i><i></i></div></article><article class="profile-card"><span class="eyebrow">CURRENT STREAK</span><h2>7 days 🔥</h2><p>You're building a great habit.</p><div class="week"><b> M </b><b> T </b><b> W </b><b> T </b><b> F </b><b> S </b><b> S </b></div></article></div>
+  <div class="saved"><div class="section-head"><div><span class="eyebrow">SAVED FOR LATER</span><h2>Your shelf</h2></div></div><div class="saved-row"><div class="saved-book"><div class="cover c-fantasy">✦</div><b>The Little Lantern</b><small>62% complete</small></div><div class="saved-book"><div class="cover c-mystery">?</div><b>Case of the Clock</b><small>18% complete</small></div><div class="saved-book"><div class="cover c-adventure">→</div><b>River of Stars</b><small>Not started</small></div></div></div>
+</section>
+</main>
+
+<div class="modal" id="ageModal" aria-hidden="true"><div class="modal-card"><button class="close" data-close>×</button><span class="eyebrow">PERSONALISE READIFY</span><h2>What is your age group?</h2><p>We'll use this only to tailor your book recommendations and hide books that aren't suitable.</p><div class="age-options" id="ageOptions"><button data-age="6">6–8</button><button data-age="9">9–11</button><button data-age="12" class="selected">12–14</button><button data-age="15">15–17</button><button data-age="18">18+</button></div><button class="btn primary full" id="saveAge">Save age group</button></div></div>
+<div class="toast" id="toast"></div>
+<footer><span>© 2026 Readify</span><span>Read kindly · Discuss thoughtfully · Earn joyfully</span></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
